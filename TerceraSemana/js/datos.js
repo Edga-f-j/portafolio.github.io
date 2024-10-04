@@ -1,4 +1,4 @@
-carros = [
+let carros = [
    {
      "marca": "Mazda RX4",
      "mpg": 21,
@@ -448,3 +448,34 @@ carros = [
      "carb": 2
    }
  ]
+
+//  for(let carro of carros){
+//   console.log(carro.mpg);
+// }
+
+
+const tablaDeCarros = document.querySelector("#tablacarros tbody");
+
+
+carros.forEach(carro => {
+  let fila = document.createElement('tr');
+
+
+  fila.innerHTML = `
+    <td>${carro.marca}</td>
+    <td>${carro.mpg}</td>
+    <td>${carro.cyl}</td>
+    <td>${carro.disp}</td>
+    <td>${carro.hp}</td>
+    <td>${carro.drat}</td>
+    <td>${carro.wt}</td>
+    <td>${carro.qsec}</td>
+    <td>${carro.vs}</td>
+    <td>${carro.am}</td>
+    <td>${carro.gear}</td>
+    <td>${carro.gear}</td>
+  
+  `;
+  tablaDeCarros.appendChild(fila);
+})
+

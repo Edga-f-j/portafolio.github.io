@@ -1,8 +1,44 @@
 
-let elemento = document.getElementById("miElemento");
-console.log(elemento);    
-elemento.textContent = "esto es javascript";
-elemento.style = "color:red";
+
+
+const inputemail = document.getElementById("email");
+const inputclave = document.getElementById("clave");
+const miElemento = document.getElementById("miElemento")
+const myForm = document.querySelector("form");
+
+myForm.addEventListener("click", function(event){
+    event.preventDefault();
+});
+
+function validarform(){
+
+    const expresion = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
+    if(expresion.test(inputemail.value)){
+        console.log("Si ");
+      
+    }
+    else{
+        alert("error en el correo");
+        return;
+    }
+
+    if(inputclave.value === ""){
+        alert("debe ingresar una clave");
+    }
+    
+    else {
+        if(inputclave.value == "miclave"){
+            console.log(miElemento)
+            alert("ha ingresado correctamente");
+            miElemento.innerHTML = "Bienvenido "+ inputemail.value;
+        }else{
+            alert("la clave esta mal");
+        }   
+    }
+}
+
+
+
 
 
 
